@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class MonsterDefeat {
+public class MonsterDefeat implements ScoreEvent {
     private String monsterName;
     private int difficultLevel;
     private boolean boss;
@@ -11,6 +11,7 @@ public class MonsterDefeat {
         this.boss = boss;
     }
 
+    @Override
     public String getName() {
         return this.monsterName;
     }

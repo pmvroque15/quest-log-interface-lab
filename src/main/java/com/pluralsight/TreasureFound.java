@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import javax.swing.*;
 
-public class TreasureFound {
+public class TreasureFound implements ScoreEvent{
     private String treasureName;
     private String rarity;
 
@@ -11,11 +11,12 @@ public class TreasureFound {
         this.rarity = rarity;
     }
 
-
     public String getRarity() {
         return rarity;
     }
 
+
+    @Override
     public String getName() {
         return this.treasureName;
     }
@@ -37,6 +38,6 @@ public class TreasureFound {
     }
 
     public String getSummary() {
-        return String.format("Found %s for %d points", getName(), getPoints());
+        return String.format("Found %s %s for %d points", getRarity(), getName(), getPoints());
     }
 }
