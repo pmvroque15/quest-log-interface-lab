@@ -1,7 +1,6 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class QuestLog {
@@ -50,6 +49,19 @@ public class QuestLog {
     }
 
     public void printSummary() {
+        int number = 1;
+
+
+
+        System.out.println("QUEST LOG");
+        System.out.println("--------------------------------");
+        for (ScoreEvent e : events) {
+            System.out.println( number++ + ". " + e.getSummary());
+        }
+        System.out.println("--------------------------------");
+        System.out.println("Total score: " + getTotalScore());
+        System.out.println("Best Event: " + getHighestScoringEvent().getSummary());
+        System.out.println("Worst Event: " + getLowestScoringEvent().getSummary());
 
     }
 }
